@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Home Page</title>
+    
+</head>
+<body>
+    <nav class="sidebar">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="grad.webp" alt="graduation"/>
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">Tech School</span>
+                    <span class="profession">A place of learning</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="home.html">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="students.html">
+                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                            <span class="text nav-text">Students</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="chatbot.html">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Activity</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="index.html">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+                
+            </div>
+        </div>
+
+    </nav>
+
+
+    <section class="home">
+        <div class="text text-center py-3">Teacher's Portal</div>
+        <div class="container mt-4">
+            <div class="row">
+                
+                <!-- Teacher Profile --> 
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card teacher-profile h-100">
+                        <img src="teacher.webp" alt="Teacher" class="card-img-top teacher-image mx-auto" style=padding-top:7px;>
+                        <div class="card-body">
+                            <h2 class="teacher-name">Ayan Abdullahi</h2>
+                            <h4>Teacher ID: 123456</h4>
+                            <h3 class="classes-taught">Classes Taught:</h3>
+                            <ul class="class-list">
+                                <li>Mathematics</li>
+                                <li>Science</li>
+                                <li>History</li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- Timetable -->
+                <div class="col-12 col-md-8">
+                    <div class="card timetable-card h-100">
+                        <div class="card-body">
+                            <h3 class="timetable-title">Timetable:</h3>
+                            <table class="table table-bordered timetable">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Day</th>
+                                        <th>Time</th>
+                                        <th>Class</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Monday</td>
+                                        <td>9:00 AM - 10:00 AM</td>
+                                        <td>Science</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tuesday</td>
+                                        <td>10:15 AM - 11:15 AM</td>
+                                        <td>History</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wednesday</td>
+                                        <td>11:30 AM - 12:30 PM</td>
+                                        <td>Science</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Thursday</td>
+                                        <td>1:00 PM - 2:00 PM</td>
+                                        <td>Mathematics</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Friday</td>
+                                        <td>2:30 PM - 3:30 PM</td>
+                                        <td>Geography</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const body = document.querySelector('body'),
+      sidebar = body.querySelector('nav'),
+      toggle = body.querySelector(".toggle"),
+      searchBtn = body.querySelector(".search-box"),
+      modeSwitch = body.querySelector(".toggle-switch"),
+      modeText = body.querySelector(".mode-text");
+
+
+toggle.addEventListener("click" , () =>{
+    sidebar.classList.toggle("close");
+})
+
+searchBtn.addEventListener("click" , () =>{
+    sidebar.classList.remove("close");
+})
+
+modeSwitch.addEventListener("click" , () =>{
+    body.classList.toggle("dark");
+    
+    if(body.classList.contains("dark")){
+        modeText.innerText = "Light mode";
+    }else{
+        modeText.innerText = "Dark mode";
+        
+    }
+});
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        -->
+</body>
+</html>
